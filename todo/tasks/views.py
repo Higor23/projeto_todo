@@ -17,3 +17,6 @@ def helloword(request):
 
 def yourName(request, name):
     return render(request, 'tasks/yourname.html', {'name': name})
+
+def newTask(request):
+    return HttpResponse('Hello World') #verificar

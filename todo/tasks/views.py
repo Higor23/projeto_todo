@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 
 from django.http import HttpResponse
-from.models import Task
+
+from .models import Task
 
 def taskList(request):
     tasks = Task.objects.all()
@@ -10,6 +11,11 @@ def taskList(request):
 def taskView(request, id):
     task = get_object_or_404(Task, pk=id)
     return render(request, 'tasks/task.html', {'task': task})
+
+
+
+
+
 
 def helloword(request):
     return HttpResponse('Hello World')

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}  <!--Adição do crispy para utilização dos formulários do bootstrap-->
 
 {% block title %} Adicione uma terefa {% endblock %}
 
@@ -7,7 +8,7 @@
     <h1>Adicione sua nova tarefa</h1>
     <form method="POST">
         {%csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }} <!--Necessário alterar para esta escrita para conseguir modificar o formulário-->
         <input type="submit" class="btn btn-success" value="Criar Tarefa">
     </form>
     
